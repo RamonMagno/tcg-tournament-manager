@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/tcg-tournament-manager.application/tcg-tournament-manager.application.csproj" />
+    <Project Path="src/tcg-tournament-manager.domain/tcg-tournament-manager.domain.csproj" />
+    <Project Path="src/tcg-tournament-manager.presentation.webapi/tcg-tournament-manager.presentation.webapi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/tcg-tournament-manager.application.tests/tcg-tournament-manager.application.tests.csproj" />
+    <Project Path="tests/tcg-tournament-manager.domain.tests/tcg-tournament-manager.domain.tests.csproj" />
+    <Project Path="tests/tcg-tournament-manager.presentation.webapi.tests/tcg-tournament-manager.presentation.webapi.tests.csproj" />
+  </Folder>
+</Solution>

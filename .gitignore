@@ -1,0 +1,41 @@
+# .gitignore para projeto .NET (C#)
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Linux
+*~
+
+# Logs
+*.log
+
+# Configurações locais
+appsettings.Development.json
+
+# Test results
+TestResults/
+
+# Outros arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de backup
+*.bak
+*.old
+*.orig

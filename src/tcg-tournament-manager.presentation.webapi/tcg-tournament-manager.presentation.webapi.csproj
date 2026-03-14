@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -9,6 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\tcg-tournament-manager.application\tcg-tournament-manager.application.csproj" />
+    <ProjectReference Include="..\tcg_tournament_manager.infrastructure.data\tcg-tournament-manager.infrastructure.data.csproj" />
   </ItemGroup>
 
 </Project>

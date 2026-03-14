@@ -25,8 +25,12 @@ obj/
 # Logs
 *.log
 
-# Configurações locais
-appsettings.Development.json
+# Configurações locais (nunca subir para o repositório)
+appsettings.json
+appsettings.*.json
+
+# Visual Studio
+.vs/
 
 # Test results
 TestResults/

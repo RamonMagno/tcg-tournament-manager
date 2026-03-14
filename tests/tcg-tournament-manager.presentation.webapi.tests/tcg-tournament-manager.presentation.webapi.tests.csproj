@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\Ramon\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.dll" />
+    <Content Remove="C:\Users\Ramon\.nuget\packages\microsoft.testplatform.testhost\17.14.1\build\net8.0\x64\testhost.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\Ramon\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.abstractions.dll" />
+    <None Remove="C:\Users\Ramon\.nuget\packages\xunit.runner.visualstudio\3.1.4\build\net8.0\xunit.runner.visualstudio.testadapter.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="xunit" Version="2.9.3" />

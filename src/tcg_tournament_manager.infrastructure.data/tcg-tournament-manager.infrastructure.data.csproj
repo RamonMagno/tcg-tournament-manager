@@ -2,18 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>tcg_tournament_manager.application</RootNamespace>
+	  <RootNamespace>tcg_tournament_manager.infrastructure.data</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\tcg-tournament-manager.domain\tcg-tournament-manager.domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="12.1.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
   </ItemGroup>
 
 </Project>

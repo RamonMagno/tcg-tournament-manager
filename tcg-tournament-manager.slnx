@@ -3,10 +3,12 @@
     <Project Path="src/tcg-tournament-manager.application/tcg-tournament-manager.application.csproj" />
     <Project Path="src/tcg-tournament-manager.domain/tcg-tournament-manager.domain.csproj" />
     <Project Path="src/tcg-tournament-manager.presentation.webapi/tcg-tournament-manager.presentation.webapi.csproj" />
+    <Project Path="src/tcg_tournament_manager.infrastructure.data/tcg-tournament-manager.infrastructure.data.csproj" Id="3f9b7f16-8395-48a9-b434-97cafe3d3e41" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/tcg-tournament-manager.application.tests/tcg-tournament-manager.application.tests.csproj" />
     <Project Path="tests/tcg-tournament-manager.domain.tests/tcg-tournament-manager.domain.tests.csproj" />
     <Project Path="tests/tcg-tournament-manager.presentation.webapi.tests/tcg-tournament-manager.presentation.webapi.tests.csproj" />
+    <Project Path="tests/tcg-tournament_manager.infrastructure.data.tests/tcg-tournament_manager.infrastructure.data.tests.csproj" Id="6d809021-e078-4e1e-9ef1-71b78bbac6d8" />
   </Folder>
 </Solution>

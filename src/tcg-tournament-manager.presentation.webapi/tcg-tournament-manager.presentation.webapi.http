@@ -1,6 +1,0 @@
-@tcg_tournament_manager.presentation.webapi_HostAddress = http://localhost:5083
-
-GET {{tcg_tournament_manager.presentation.webapi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

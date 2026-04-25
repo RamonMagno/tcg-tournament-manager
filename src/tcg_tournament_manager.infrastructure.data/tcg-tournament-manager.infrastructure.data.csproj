@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\tcg-tournament-manager.domain\tcg-tournament-manager.domain.csproj" />
   </ItemGroup>
 

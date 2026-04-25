@@ -1,16 +1,24 @@
-﻿using tcg_tournament_manager.application.Shared.Command;
-using tcg_tournament_manager.application.Training.Dto;
+﻿using tcg_tournament_manager.application.Training.Dto;
+using tcg_tournament_manager.domain.Shared.Commands;
 
 namespace tcg_tournament_manager.application.Training.Commands
 {
     public sealed record CreateTrainingCommand : ICommand<TrainingDto>
     {
-        public Guid Id { get; set; }
-        public CreateTrainingCommand(Guid id)
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public Guid? GameId { get; set; }
+        public int? PlayersLimit { get; set; }
+
+        public CreateTrainingCommand(string? name,
+                                     string? description,
+                                     Guid? gameId,
+                                     int? playersLimit)
         {
-            Id = id;
-
-
+            Name = name;
+            Description = description;
+            GameId = gameId;
+            PlayersLimit = playersLimit;
         }
     }
 }

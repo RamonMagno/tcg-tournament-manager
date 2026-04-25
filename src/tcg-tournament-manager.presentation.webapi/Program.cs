@@ -1,18 +1,18 @@
-using tcg_tournament_manager.application.Configuration;
-using tcg_tournament_manager.domain.Interfaces;
-using tcg_tournament_manager.infrastructure.data.Repositories;
+using tcg_tournament_manager.application.Shared.DependencyInjection;
+using tcg_tournament_manager.infrastructure.data.DependencyInjection;
+using tcg_tournament_manager.presentation.webapi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
-builder.Services.AddScoped<ITrainingRepository, TrainingRepository>();
-
-builder.Services.AddApplication();
+builder.Services.AddApplicationDepedencyInjection();
+builder.Services.AddInfrastructureDataDependencyInjection(builder.Configuration);
 
 
 var app = builder.Build();
@@ -21,12 +21,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseMiddleware<ExceptionMiddleware>();
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

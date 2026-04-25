@@ -1,8 +1,9 @@
-﻿using tcg_tournament_manager.application.Shared.Commands;
-using tcg_tournament_manager.application.Train.Convertes;
+﻿using tcg_tournament_manager.application.Train.Convertes;
 using tcg_tournament_manager.application.Training.Commands;
+using tcg_tournament_manager.application.Training.Converters;
 using tcg_tournament_manager.application.Training.Dto;
-using tcg_tournament_manager.domain.Interfaces;
+using tcg_tournament_manager.domain.Interfaces.Repositories;
+using tcg_tournament_manager.domain.Shared.Commands;
 
 namespace tcg_tournament_manager.application.Training.Handlers
 {
@@ -16,16 +17,13 @@ namespace tcg_tournament_manager.application.Training.Handlers
 
         public async Task<TrainingDto> HandleAsync(CreateTrainingCommand command, CancellationToken cancellationToken = default)
         {
-            var training =  await _trainingRepository.GetTrainingByIdAsync(command.Id);
+            var training = command.ConvertToTrainingEntity();
 
-            if (training is null)
-            {
-                throw new InvalidOperationException($"Training with id {command.Id} not exists.");
-            }
+            //await _trainingRepository.AddAsync(training, cancellationToken);
 
-            var trainingDto = training.ConvertToTrainDto();
+            await Task.Delay(2);
 
-            return trainingDto;
+            return training.ConvertToTrainingDto();
         }
     }
 }

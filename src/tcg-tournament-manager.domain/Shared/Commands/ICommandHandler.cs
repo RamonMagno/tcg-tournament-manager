@@ -1,6 +1,4 @@
-﻿using tcg_tournament_manager.application.Shared.Command;
-
-namespace tcg_tournament_manager.application.Shared.Commands
+﻿namespace tcg_tournament_manager.domain.Shared.Commands
 {
     public interface ICommandHandler<TCommand>
         where TCommand : ICommand

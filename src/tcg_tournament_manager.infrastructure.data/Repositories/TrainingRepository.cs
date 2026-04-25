@@ -1,35 +1,25 @@
 ﻿using tcg_tournament_manager.domain.Entities;
-using tcg_tournament_manager.domain.Interfaces;
+using tcg_tournament_manager.domain.Interfaces.Repositories;
+using tcg_tournament_manager.infrastructure.data.Context;
 
 namespace tcg_tournament_manager.infrastructure.data.Repositories
 {
-    public class TrainingRepository : ITrainingRepository
+    public class TrainingRepository : Repository<Training>, ITrainingRepository
     {
+        public TrainingRepository(TCGTournamentManagerContext context) : base(context)
+        {
+        }
+
         public Task<Training> GetTrainingByIdAsync(Guid id)
         {
-            try
-            {
-                var playerOne = new Player();
-                playerOne.Id = new Guid();
-                playerOne.Name = "Ramon Mello";
+            var training = Training.Create("Treino de teste",
+                                            Guid.CreateVersion7(),
+                                            "decricao",
+                                            "inviteUrl",
+                                            Guid.CreateVersion7(),
+                                            20);
 
-                var playerTwo = new Player();
-                playerTwo.Id = new Guid();
-                playerTwo.Name = "Penelope Oliveira";
-
-                var training = new Training();
-
-                training.AddPlayer(playerOne);
-                training.AddPlayer(playerTwo);
-
-                training.CreateTraining(id, "Treino legal", DateTime.Now, DateTime.Now, Guid.NewGuid());
-
-                return Task.FromResult(training);
-            }
-            catch 
-            {
-                return null;
-            }
+            return Task.FromResult(training);
         }
     }
 }

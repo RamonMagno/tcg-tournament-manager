@@ -1,4 +1,4 @@
-﻿namespace tcg_tournament_manager.application.Shared.Queries
+﻿namespace tcg_tournament_manager.domain.Shared.Queries
 {
     public interface IQueryHandler<TQuery, TResult>
         where TQuery : IQuery<TResult>

@@ -1,30 +1,38 @@
+using tcg_tournament_manager.domain.Abstracts;
+
 namespace tcg_tournament_manager.domain.Entities
 {
-    public class Training
+    public class Training : BaseEntity
     {
-        public string Name { get; set; }
-        public DateTime StartIn { get; set; }
-        public DateTime EndIn { get; set; }
+        public string? Name { get; private set; }
+        public Guid PlayerHostId { get; private set; }
+        public string? Description { get; private set; }
+        public string? InviteUrl { get; private set; }
+        public Guid GameId { get; private set; }
+        public int? PlayersLimit { get; private set; }
+        public virtual ICollection<Player>? ParticipantPlayers { get; private set; }
 
-        public virtual ICollection<Player> Players { get; private set; }
-
-        public Training()
-        {
-            Players = new List<Player>();
-        }
-
-        public Player AddPlayer(Player player)
-        {
-            Players.Add(player);
-            return player;
-        }
-
-        public Training CreateTraining(Guid id, string name, DateTime startIn, DateTime endIn, Guid tournamentId)
+        protected Training(string name, Guid playerHostId, string? description, string? inviteUrl, Guid gameId, int? playersLimit)
         {
             Name = name;
-            StartIn = startIn;
-            EndIn = endIn;
-            return this;
+            PlayerHostId = playerHostId;
+            Description = description;
+            InviteUrl = inviteUrl;
+            GameId = gameId;
+            PlayersLimit = playersLimit;
+
+            ParticipantPlayers = new List<Player>();
+        }
+
+        private Training()
+        {
+            ParticipantPlayers = new List<Player>();
+        }
+
+        public static Training Create(string name, Guid playerHostId, string? description, string? inviteUrl, Guid gameId, int? playersLimit)
+        {
+            var training = new Training(name, playerHostId, description, inviteUrl, gameId, playersLimit);
+            return training;
         }
     }
 }

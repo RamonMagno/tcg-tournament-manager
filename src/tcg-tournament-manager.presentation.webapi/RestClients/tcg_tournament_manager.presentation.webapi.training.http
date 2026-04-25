@@ -1,1 +1,11 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+### Create a new training session
+POST https://localhost:7077/api/training
+Content-Type: application/json
+{
+  "name": "Morning Training",
+  "description": "A training session focused on improving deck building skills.",
+  "date": "2024-07-01T10:00:00Z",
+  "durationInMinutes": 120
+}
